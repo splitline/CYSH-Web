@@ -1,2 +1,2 @@
 # CYSH-Web
->A Simplify & eautify web for CYSH.
+>A Simplify & beautify web for CYSH.
