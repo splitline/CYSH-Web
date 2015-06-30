@@ -1,75 +1,6 @@
 <?php
-session_start();
-?>
-<?php
-    if(isset($_SESSION['id'])){
-        $id=$_SESSION['id'];
-        $pwd=$_SESSION['pwd'];
-    }else{
-        $_SESSION['id']=$id=$_POST['id'];
-        $_SESSION['pwd']=$pwd=$_POST['pwd'];
-    }
-    function setUrlCookie($url, $postdata){
-        $cookie_jar = tempnam('./tmp','cookie'); // Create file with unique file name (cookie*)
-        $resource = curl_init();
-        curl_setopt($resource, CURLOPT_URL, $url);
-        curl_setopt($resource, CURLOPT_POST, 1);
-        curl_setopt($resource, CURLOPT_POSTFIELDS, $postdata);
-        curl_setopt($resource, CURLOPT_COOKIEFILE, $cookie_jar);
-        curl_setopt($resource, CURLOPT_COOKIEJAR, $cookie_jar);
-        curl_setopt($resource, CURLOPT_RETURNTRANSFER, 1);
-        curl_exec($resource);
-        return $resource;
-    }
-
-    function getUrlContent($resource, $url){
-        curl_setopt($resource, CURLOPT_URL, $url);
-        curl_setopt($resource, CURLOPT_RETURNTRANSFER, 1);
-        $content = curl_exec($resource);
-
-        return $content;
-    }
-
-
-    $url = 'http://163.27.3.19/school/Login.asp';
-    $postdata = "txtID=$id&txtPWD=$pwd&Chk=Y";
-    $resource = setUrlCookie($url, $postdata); // set cookie 'u' => 'admin' or anything
-
-    $url = 'http://163.27.3.19/school/STD_SCORE.asp';
-    $html= getUrlContent($resource, $url); // Login success.
-    
-//==========================================================================================//
-
-    include('simple_html_dom.php');
-    class subject {
-        public $name;
-        public $exam1;
-        public $exam2;
-        public $exam3;
-    }
-    $html =  str_get_html($html);
-    // echo $html;
-    $table = $html->find('table', 3);
-    //echo $table;
-    $subject_count=substr_count($table,"<tr>")-3;
-    $i=$j=0;
-    foreach($table->find('tr') as $tr){
-       $j=0;
-       foreach($tr->find('td') as $td){
-            //echo $td.$i." ".$j."<br>";
-            $subjects[$subject_count]=new subject;
-            if($j==0)
-                @$subjects[$i]->name=$td->plaintext;
-            if($j==1)
-                @$subjects[$i]->exam1=$td->plaintext;
-            if($j==2)
-                @$subjects[$i]->exam2=$td->plaintext;
-            if($j==3)
-                @$subjects[$i]->exam3=$td->plaintext;
-            $j++;
-       }
-       $i++;
-    }
+    session_start();
+    include('fetch.php');
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr">
@@ -81,7 +12,7 @@ session_start();
         <link rel="stylesheet" href="css/uikit.gradient.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="js/uikit.min.js"></script>
-        <script src="Chart.min.js"></script>
+        <script src="js/Chart.min.js"></script>
     </head>
 
     <body>
@@ -104,7 +35,7 @@ session_start();
                                 <ul class="uk-nav uk-nav-navbar">
                                     <li><a href="#">Profile</a></li>
                                     <li class="uk-nav-divider"></li>
-                                    <li><a href="#">Log Out</a></li>
+                                    <li><a href="./?log_out">Log Out</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -149,7 +80,6 @@ session_start();
                                             ?>
                                         </tbody>
                                     </table>
-                                    
                                 </li>
                                 <li>
                                     <table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
@@ -224,7 +154,6 @@ session_start();
                             </ul>
                         </div>
                         <div class="uk-width-medium-2-3">
-                        <hr>
                             <canvas id="canvas" height="200px"></canvas>
                         </div>
                         </div>
@@ -304,26 +233,23 @@ session_start();
                             ]
 
                         }
+                        var ctx = document.getElementById("canvas").getContext("2d");
                         window.onload = function(){
-                            var ctx = document.getElementById("canvas").getContext("2d");
                             new Chart(ctx).Bar(barChartData1, {
-                                responsive : true
+                                responsive : true,
                             });
                         }
                         $("#exam1").click(function(){
-                            var ctx = document.getElementById("canvas").getContext("2d");
                             new Chart(ctx).Bar(barChartData1, {
                                 responsive : true
                             });
                         });
                         $("#exam2").click(function(){
-                            var ctx = document.getElementById("canvas").getContext("2d");
                             new Chart(ctx).Bar(barChartData2, {
                                 responsive : true
                             });
                         });
                         $("#exam3").click(function(){
-                            var ctx = document.getElementById("canvas").getContext("2d");
                             new Chart(ctx).Bar(barChartData3, {
                                 responsive : true
                             });
