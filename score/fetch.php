@@ -43,7 +43,7 @@
     }
 
 //================Start parse================//
-    include('simple_html_dom.php');
+    include('../simple_html_dom.php');
     class subject {
         public $name;
         public $exam1;
