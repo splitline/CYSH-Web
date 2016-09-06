@@ -105,7 +105,7 @@ if($format=='json'){
 		foreach(@$file_html->find('a') as $element){
 			if($i!=0)echo ",{";
 			else echo "{";
-			echo "\"filename\":\"".$element->innertext."\",\"url\":\""."http://www.cysh.cy.edu.tw/".$element->href."\"}";
+			echo "\"filename\":\"".str_replace("'","\"",str_replace(";", "#__semicolon__#",addslashes($element->innertext)))."\",\"url\":\""."http://www.cysh.cy.edu.tw/".$element->href."\"}";
 			$i++;
 		}
 	}

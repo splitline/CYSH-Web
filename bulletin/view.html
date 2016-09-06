@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
+		<meta property="og:image" content="http://cysh.qov.tw/banner.jpg"></meta>
 		<title>嘉中人-CYSHer</title>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Bootstrap core CSS -->
@@ -16,6 +17,14 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body style="padding-top:70px">
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.7";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 		<!-- <a href="#" class="btn btn-danger btn-fab go-to-top"><i class="material-icons">arrow_drop_up</i></a> -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
@@ -25,21 +34,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="javascript:void(0)">嘉中人</a>
+					<a class="navbar-brand" href="javascript:void(0)">嘉中人-CYSHer</a>
 				</div>
 				<div class="navbar-collapse collapse navbar-inverse-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="javascript:void(0)">公告</a></li>
-						<li><a href="javascript:void(0)">成績查詢</a></li>
+						<li class="active"><a href="./">公告</a></li>
+						<li><a href="../score">成績查詢</a></li>
 					</ul>
-					<form class="navbar-form navbar-left">
-						<div class="form-group">
-							<input type="text" class="form-control col-md-8" placeholder="Search">
-						</div>
-					</form>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="javascript:void(0)">關於</a></li>
-						<li class="dropdown">
+						<!-- <li class="dropdown">
 							<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">未登入
 							<b class="caret"></b></a>
 							<ul class="dropdown-menu">
@@ -49,7 +53,7 @@
 								<li class="divider"></li>
 								<li><a href="javascript:void(0)">Separated link</a></li>
 							</ul>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -57,9 +61,13 @@
 		<div class="container">
 			<div class="starter-template">
 				<div class="well">
+
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h3 class="panel-title article-title">Loading...</h3>
+							<span class="panel-title article-title">Loading...</span>
+							<div class="fb-like"  data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+							
+							
 						</div>
 						<div class="panel-body article-content" style="overflow: auto;">
 							<!-- SPINNER -->
@@ -94,10 +102,17 @@
 							</div>
 						</div>
 					</div>
+					<div class="fb-comments" data-numposts="5"></div>
 				</div>
 			</div>
 		</div>
 		<!-- /.container -->
+		<div class="footer">
+      <div class="container">
+        <p class="text-muted">Made by Splitline. <a href="https://github.com/splitline/CYSH-Web">Github</a></p>
+
+      </div>
+    </div>
 		<!-- Bootstrap core JavaScript
 			================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->

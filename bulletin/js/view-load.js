@@ -23,10 +23,11 @@ function load(){
       //alert("SUCCESS!!!");
 
       $("a#open").attr("href",data["url"]);
-      $("h3.article-title").text(data["title"]);
+      $("span.article-title").html(data["title"]);
+      //$("button.bulletin-info").attr('data-content',"類型："+data["type"]+"發佈日期："+data["date"]+"發佈單位："+data["unit"])
       var content=data["content"].replace(/#__semicolon__#/ig,";");
       $("div.article-content").html(content);
-		var NumOfJData = data["file"].length;
+	  var NumOfJData = data["file"].length;
       for (var i = 0; i < NumOfJData; i++) {
         var link=$("<a class=\"btn btn-raised btn-success\"></a>").text(data["file"][i]["filename"]).attr('href',data["file"][i]["url"]).append("<i class=\"material-icons\">file_download</i>"); 
         $("div.download-list").append(link);
