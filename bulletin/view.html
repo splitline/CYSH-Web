@@ -1,106 +1,115 @@
 <!-- view.html -->
-
 <!DOCTYPE html>
 <html lang="zh-tw">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>嘉中人-CYSHer</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-material-design.css" rel="stylesheet">
-    <link href="css/ripples.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    
-  </head>
-
-  <body style="padding-top:70px">
-    <!-- <a href="#" class="btn btn-danger btn-fab go-to-top"><i class="material-icons">arrow_drop_up</i></a> -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="javascript:void(0)">嘉中人</a>
-      </div>
-      <div class="navbar-collapse collapse navbar-inverse-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="javascript:void(0)">公告</a></li>
-          <li><a href="javascript:void(0)">成績查詢</a></li>
-        </ul>
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" class="form-control col-md-8" placeholder="Search">
-          </div>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void(0)">關於</a></li>
-          <li class="dropdown">
-            <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">未登入
-              <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="javascript:void(0)"></a></li>
-              <li><a href="javascript:void(0)">Another action</a></li>
-              <li><a href="javascript:void(0)">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="javascript:void(0)">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-    <div class="container">
-      <div class="starter-template">
-          <div class="well">    
-			<div class="panel panel-primary">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Loading...</h3>
-			  </div>
-			  <div class="panel-body" style="overflow: auto;">
-			    <!-- SPINNER -->
-	            <center>
-	            <div class="spinner">
-	              <svg viewBox="0 0 100 100">
-	                <circle cx="50" cy="50" r="20" />
-	              </svg>
-	            </div>
-	            </center>
-	            <!-- SPINNER -->
-			  </div>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>嘉中人-CYSHer</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-material-design.css" rel="stylesheet">
+		<link href="css/ripples.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body style="padding-top:70px">
+		<!-- <a href="#" class="btn btn-danger btn-fab go-to-top"><i class="material-icons">arrow_drop_up</i></a> -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="javascript:void(0)">嘉中人</a>
+				</div>
+				<div class="navbar-collapse collapse navbar-inverse-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="javascript:void(0)">公告</a></li>
+						<li><a href="javascript:void(0)">成績查詢</a></li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control col-md-8" placeholder="Search">
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="javascript:void(0)">關於</a></li>
+						<li class="dropdown">
+							<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">未登入
+							<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0)"></a></li>
+								<li><a href="javascript:void(0)">Another action</a></li>
+								<li><a href="javascript:void(0)">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="javascript:void(0)">Separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<a href="#" target="_blank" class="btn btn-default btn-raised btn-primary" id="open">
-		  	<i class="material-icons">open_in_new</i>開啟原始網頁
-			</a>
-          </div>
-      </div>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/ripples.min.js"></script>
-    <script src="./js/material.min.js"></script>
-    <script>
-      $(function () {
-        $.material.init();
-      });
-    </script>
-    <script src="./js/view-load.js"></script>
-  </body>
+		</div>
+		<div class="container">
+			<div class="starter-template">
+				<div class="well">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title article-title">Loading...</h3>
+						</div>
+						<div class="panel-body article-content" style="overflow: auto;">
+							<!-- SPINNER -->
+							<center>
+								<div class="spinner">
+									<svg viewBox="0 0 100 100">
+										<circle cx="50" cy="50" r="20" />
+									</svg>
+								</div>
+							</center>
+							<!-- SPINNER -->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="panel panel-default">
+								<div class="panel-heading">附件</div>
+								<div class="panel-body download-list"></div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<p>
+										這篇公告由嘉中校方網站讀取。<br>
+										讀取過程中可能出現錯誤，如有超連結錯誤、圖片無法顯示、排版混亂等情形，可點此參考原始公告網頁。
+									</p>
+									<a href="#" target="_blank" class="btn btn-default btn-raised btn-primary" id="open">
+									<i class="material-icons">open_in_new</i>開啟原始網頁
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.container -->
+		<!-- Bootstrap core JavaScript
+			================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/ripples.min.js"></script>
+		<script src="./js/material.min.js"></script>
+		<script>
+			$(function () {
+				$.material.init();
+			});
+		</script>
+		<script src="./js/view-load.js"></script>
+	</body>
 </html>

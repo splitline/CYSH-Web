@@ -19,16 +19,19 @@ function load(){
     type: "GET",
     dataType: "json",
     success: function(data) {
+    	
       //alert("SUCCESS!!!");
-      //var NumOfJData = data.length; 
-      // for (var i = 0; i < NumOfJData; i++) {
-      //   console.log(data[i]["title"]);   
-      //   console.log(data[i]["date"]);    
-      // }
+
       $("a#open").attr("href",data["url"]);
-      $("h3.panel-title").text(data["title"]);
+      $("h3.article-title").text(data["title"]);
       var content=data["content"].replace(/#__semicolon__#/ig,";");
-      $("div.panel-body").html(content);
+      $("div.article-content").html(content);
+		var NumOfJData = data["file"].length;
+      for (var i = 0; i < NumOfJData; i++) {
+        var link=$("<a class=\"btn btn-raised btn-success\"></a>").text(data["file"][i]["filename"]).attr('href',data["file"][i]["url"]).append("<i class=\"material-icons\">file_download</i>"); 
+        $("div.download-list").append(link);
+        
+      }
       $("div.spinner").addClass("hide");
     },
     error: function(xhr, ajaxOptions, thrownError){

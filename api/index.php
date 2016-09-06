@@ -95,11 +95,21 @@ if($format=='json'){
 		echo "\t\"date\":\"".substr(@$html->find('font[color=#000000]', 4)->innertext,9)."\",\n";
 		echo "\t\"unit\":\"".substr(@$html->find('font[color=#000000]', 5)->innertext,12)."\",\n";
 		if($text=='origin')
-			echo "\t\"content\":\"".str_replace("'","\"",str_replace(";", "#__semicolon__#", addslashes(@$html->find('font[color=#000000]', 6)->innertext))) ."\"\n";
+			echo "\t\"content\":\"".str_replace("'","\"",str_replace(";", "#__semicolon__#", addslashes(@$html->find('font[color=#000000]', 6)->innertext))) ."\",\n";
 		if($text=='plain')
 			echo "\t\"content\":\"".addslashes(@$html->find('td[valign="top"]', 1)->plaintext)."\"\n";
-
-		echo "}";
+		echo "\t\"file\":[";
+		$file_html=@$html->find('table[bgcolor=#CCCCCC]',0);
+		$i=0;
+		if(isset($file_html)){
+		foreach(@$file_html->find('a') as $element){
+			if($i!=0)echo ",{";
+			else echo "{";
+			echo "\"filename\":\"".$element->innertext."\",\"url\":\""."http://www.cysh.cy.edu.tw/".$element->href."\"}";
+			$i++;
+		}
+	}
+		echo "]\n}";
 	}
 
 	
